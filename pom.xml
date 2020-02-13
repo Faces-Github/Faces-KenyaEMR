@@ -1,0 +1,212 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.openmrs.maven.parents</groupId>
+        <artifactId>maven-parent-openmrs-module</artifactId>
+        <version>1.1.1</version>
+    </parent>
+
+	<groupId>org.openmrs.module</groupId>
+	<artifactId>faces</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>FACES KenyaEMR</name>
+	<description>This is a module developed by FACES development team to run on KenyaEMR system</description>
+
+	<url>https://wiki.openmrs.org/x/FQ4z</url>
+
+	<scm>
+		<connection>scm:git:git@github.com:openmrs/openmrs-module-faces.git</connection>
+		<developerConnection>scm:git:git@github.com:openmrs/openmrs-module-faces.git</developerConnection>
+		<url>https://github.com/openmrs/openmrs-module-faces/</url>
+	</scm>
+
+	<modules>
+		<module>api</module>
+		<module>omod</module>
+	</modules>
+	<properties>
+		<openMRSVersion>1.9.9</openMRSVersion>
+
+		<!-- Module dependencies -->
+		<appframeworkVersion>2.2.1</appframeworkVersion>
+		<calculationVersion>1.0</calculationVersion>
+		<htmlformentryVersion>2.4</htmlformentryVersion>
+		<idgenVersion>2.6</idgenVersion>
+		<kenyacoreVersion>2.4.1</kenyacoreVersion>
+		<kenyaemrVersion>17.0.2</kenyaemrVersion>
+		<kenyauiVersion>2.1.1</kenyauiVersion>
+		<metadatadeployVersion>1.3</metadatadeployVersion>
+		<metadatasharingVersion>1.1.8</metadatasharingVersion>
+		<reportingVersion>0.9.8.1</reportingVersion>
+		<serializationxstreamVersion>0.2.7</serializationxstreamVersion>
+		<uiframeworkVersion>3.3.1</uiframeworkVersion>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<openmrsPlatformVersion>1.11.6</openmrsPlatformVersion>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>appframework-api</artifactId>
+			<version>${appframeworkVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>calculation-api</artifactId>
+			<version>${calculationVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>htmlformentry-api</artifactId>
+			<version>${htmlformentryVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>htmlformentry-omod</artifactId>
+			<version>${htmlformentryVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>idgen-api</artifactId>
+			<version>${idgenVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>kenyacore-api</artifactId>
+			<version>${kenyacoreVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>kenyacore-test</artifactId>
+			<version>${kenyacoreVersion}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>kenyaui-api</artifactId>
+			<version>${kenyauiVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>metadatadeploy-api</artifactId>
+			<version>${metadatadeployVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>metadatasharing-api</artifactId>
+			<version>${metadatasharingVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>reporting-api</artifactId>
+			<version>${reportingVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>serialization.xstream-api</artifactId>
+			<version>${serializationxstreamVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>uiframework-api</artifactId>
+			<version>${uiframeworkVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- End OpenMRS modules -->
+
+		<!-- Begin OpenMRS core -->
+
+		<dependency>
+			<groupId>org.openmrs.api</groupId>
+			<artifactId>openmrs-api</artifactId>
+			<version>${openMRSVersion}</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.web</groupId>
+			<artifactId>openmrs-web</artifactId>
+			<version>${openMRSVersion}</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.api</groupId>
+			<artifactId>openmrs-api</artifactId>
+			<version>${openMRSVersion}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.web</groupId>
+			<artifactId>openmrs-web</artifactId>
+			<version>${openMRSVersion}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.test</groupId>
+			<artifactId>openmrs-test</artifactId>
+			<version>${openMRSVersion}</version>
+			<type>pom</type>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>openmrs-repo</id>
+			<name>OpenMRS Nexus Repository</name>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+		</repository>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>openmrs-repo</id>
+			<name>OpenMRS Nexus Repository</name>
+			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+</project>

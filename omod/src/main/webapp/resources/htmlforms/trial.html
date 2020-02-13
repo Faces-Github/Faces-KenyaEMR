@@ -1,0 +1,81 @@
+<!--
+  ~ The contents of this file are subject to the OpenMRS Public License
+  ~ Version 1.0 (the "License"); you may not use this file except in
+  ~ compliance with the License. You may obtain a copy of the License at
+  ~ http://license.openmrs.org
+  ~
+  ~ Software distributed under the License is distributed on an "AS IS"
+  ~ basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+  ~ License for the specific language governing rights and limitations
+  ~ under the License.
+  ~
+  ~ Copyright (C) OpenMRS, LLC.  All Rights Reserved.
+-->
+<htmlform>
+
+    <style type="text/css">
+		.ke-form-content textarea {
+			width: 90%;
+		}
+	</style>
+
+    <div class="ke-form-header">
+        <table width="100%">
+            <tr>
+                <td>Date: <encounterDate id="encounter-date" showTime="true"/></td>
+                <td>Location: <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" type="autocomplete" /></td>
+            </tr>
+        </table>
+</div>
+    <div class="ke-form-content">
+        <fieldset>
+            <legend>Basic Patient Information</legend>
+
+            <table cellspacing="10">
+                <tr>
+                    <th> </th>
+                    <th>Current</th>
+                    <th>Recent</th>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td><obs id="weight" conceptId="5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />kg</td>
+                    <td><span class="value"><recentObs conceptId="5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></span></td>
+                </tr>
+                <tr>
+                    <td>Height</td>
+                    <td><obs id="height" conceptId="5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />cm</td>
+                    <td><span class="value"><recentObs conceptId="5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></span></td>
+                </tr>
+                <tr>
+                    <td>BMI</td>
+                    <td><span id="calculated-bmi" class="value"></span></td>
+                    <td><span id="recent-calculated-bmi" class="value"></span></td>
+                </tr>
+                <tr>
+                    <td>MUAC</td>
+                    <td><obs conceptId="1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                    <td><span class="value"><recentObs conceptId="1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></span></td>
+                </tr>
+                <includeIf velocityTest="$patient.gender == 'F' ">
+                    <tr>
+                        <td>LMP</td>
+                        <td><obs id="lmp-date" conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                        <td><span class="value"><recentObs conceptId="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></span></td>
+                    </tr>
+                </includeIf>
+                <tr>
+                    <td>Next Appointment Date</td>
+                    <td><obs id="tca" conceptId="5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                    <td><span class="value"><recentObs conceptId="5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></span></td>
+                </tr>
+            </table>
+        </fieldset>
+
+    </div>
+
+    <div class="ke-form-footer">
+        <submit />
+    </div>
+
+</htmlform>
