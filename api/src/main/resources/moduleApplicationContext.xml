@@ -90,7 +90,7 @@
     <bean id="kenyaemr.faces.common.report.FacesTXCurr" class="org.openmrs.module.kenyacore.report.HybridReportDescriptor">
         <property name="targetUuid" value="5ec5377e-1177-493e-b2ca-33dd8b9b6acf" />
         <property name="name" value="Faces_Current_on_ART_Report" />
-        <property name="description" value="FACES Current on ART Custom Report" />
+        <property name="description" value="FACES Current on ART Custom Report. This report is based on DATIM definition i.e cohort includesthose patients who have missed their appointment for utmost 30 days." />
         <property name="apps">
             <set>
                 <ref bean="kenyaemr.app.reports" />
